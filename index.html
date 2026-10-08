@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Selidik Penggunaan & Keperluan AI Bagi Guru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between py-6 px-4">
+
+    <div class="max-w-2xl mx-auto w-full">
+        <!-- Header Banner -->
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 sm:p-8 rounded-t-3xl shadow-lg">
+            <div class="inline-block p-3 bg-white/10 backdrop-blur-md rounded-2xl mb-3 text-2xl">
+                🤖
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-bold">Kajian Keperluan AI Bagi Guru</h1>
+            <p class="text-blue-100 text-sm mt-2 leading-relaxed">Sila isi jawapan bagi 4 soalan di bawah untuk membantu perancangan latihan dan pemantauan program AI Sekolah.</p>
+        </div>
+
+        <!-- Form Box -->
+        <div class="bg-white rounded-b-3xl shadow-xl border border-slate-100 p-6 sm:p-8 space-y-8">
+            <form id="publicSurveyForm" onsubmit="handleFormSubmit(event)" class="space-y-8">
+                
+                <!-- SOALAN 1 -->
+                <div class="p-5 bg-slate-50/80 rounded-2xl border border-slate-200/80">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-600 mb-1">SOALAN 1</label>
+                    <p class="text-sm font-semibold text-slate-900 mb-3">Nama <span class="text-red-500">*</span></p>
+                    <input type="text" id="field-nama" required placeholder="Cth: Cikgu Ahmad Zaki" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-sm bg-white">
+                </div>
+
+                <!-- SOALAN 2 -->
+                <div class="p-5 bg-slate-50/80 rounded-2xl border border-slate-200/80">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-600 mb-1">SOALAN 2</label>
+                    <p class="text-sm font-semibold text-slate-900 mb-3">Apakah tahap pengalaman tuan/puan menggunakan aplikasi AI? <span class="text-red-500">*</span></p>
+                    <div class="space-y-2.5">
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="radio" name="tahapPengalaman" value="Belum pernah menggunakan AI" required class="mt-1 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Belum pernah menggunakan AI</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="radio" name="tahapPengalaman" value="Pernah mencuba tetapi masih kurang mahir" class="mt-1 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Pernah mencuba tetapi masih kurang mahir</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="radio" name="tahapPengalaman" value="Boleh menggunakan AI untuk tugasan asas" class="mt-1 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Boleh menggunakan AI untuk tugasan asas</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="radio" name="tahapPengalaman" value="Agak mahir dan kerap menggunakan AI" class="mt-1 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Agak mahir dan kerap menggunakan AI</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="radio" name="tahapPengalaman" value="Mahir dan ingin belajar penggunaan AI pada tahap lebih lanjut" class="mt-1 text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Mahir dan ingin belajar penggunaan AI pada tahap lebih lanjut</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- SOALAN 3 -->
+                <div class="p-5 bg-slate-50/80 rounded-2xl border border-slate-200/80">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-600">SOALAN 3</span>
+                        <span class="text-amber-500 text-xs">⭐</span>
+                    </div>
+                    <p class="text-sm font-semibold text-slate-900">Apakah aplikasi atau teknologi AI yang tuan/puan berminat untuk dipelajari?</p>
+                    <p class="text-xs text-blue-600 font-medium mb-3">Boleh pilih lebih daripada satu.</p>
+                    
+                    <div class="grid grid-cols-1 gap-2.5">
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="ChatGPT – menjana idea, bahan PdPc, soalan dan aktiviti" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">ChatGPT – menjana idea, bahan PdPc, soalan dan aktiviti</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="Gemini – AI untuk PdPc dan tugasan guru" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Gemini – AI untuk PdPc dan tugasan guru</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="Canva AI – menghasilkan poster, slaid dan bahan pembelajaran" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Canva AI – menghasilkan poster, slaid dan bahan pembelajaran</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="NotebookLM – bekerja dengan nota dan dokumen menggunakan AI" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">NotebookLM – bekerja dengan nota dan dokumen menggunakan AI</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="Gamma – menghasilkan pembentangan dengan AI" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Gamma – menghasilkan pembentangan dengan AI</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="AI untuk menghasilkan video 🎬 – video pembelajaran, avatar, suara dan animasi" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">AI untuk menghasilkan video 🎬 – video pembelajaran, avatar, suara dan animasi</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="AI untuk menghasilkan imej 🖼️ – bahan visual dan ilustrasi pembelajaran" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">AI untuk menghasilkan imej 🖼️ – bahan visual dan ilustrasi pembelajaran</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="AI untuk menghasilkan kuiz & permainan 🎮" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">AI untuk menghasilkan kuiz & permainan 🎮</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s3_app" value="AI untuk membina bahan interaktif / aplikasi pembelajaran 💻" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">AI untuk membina bahan interaktif / aplikasi pembelajaran 💻</span>
+                        </label>
+                        
+                        <!-- Lain-lain -->
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl space-y-2">
+                            <label class="flex items-center gap-3 cursor-pointer">
+                                <input type="checkbox" id="s3_lain_check" onchange="toggleLain('s3_lain_check', 's3_lain_text')" class="rounded text-blue-600 focus:ring-blue-500">
+                                <span class="text-sm text-slate-700 font-medium">Lain-lain:</span>
+                            </label>
+                            <input type="text" id="s3_lain_text" disabled placeholder="Sila nyatakan..." class="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 outline-none focus:border-blue-500 disabled:bg-slate-100">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOALAN 4 -->
+                <div class="p-5 bg-slate-50/80 rounded-2xl border border-slate-200/80">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-600">SOALAN 4</span>
+                        <span class="text-amber-500 text-xs">⭐</span>
+                    </div>
+                    <p class="text-sm font-semibold text-slate-900">Apakah kemahiran AI yang paling tuan/puan perlukan untuk membantu tugasan sebagai guru?</p>
+                    <p class="text-xs text-amber-600 font-medium mb-3">Pilih sehingga 3 pilihan sahaja.</p>
+
+                    <div class="grid grid-cols-1 gap-2.5">
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="Membina RPH dan perancangan PdPc" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Membina RPH dan perancangan PdPc</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="Membina soalan, kuiz dan pentaksiran" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Membina soalan, kuiz dan pentaksiran</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="Menghasilkan lembaran kerja" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Menghasilkan lembaran kerja</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="Menghasilkan slaid pembentangan" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Menghasilkan slaid pembentangan</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="Menghasilkan poster / infografik" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">Menghasilkan poster / infografik</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="🎬 Menghasilkan video pembelajaran menggunakan AI" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">🎬 Menghasilkan video pembelajaran menggunakan AI</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="🎭 Menghasilkan video AI dengan avatar / watak" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">🎭 Menghasilkan video AI dengan avatar / watak</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="🎙️ Menjana suara / narasi menggunakan AI" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">🎙️ Menjana suara / narasi menggunakan AI</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="🎨 Menghasilkan imej dan visual menggunakan AI" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">🎨 Menghasilkan imej dan visual menggunakan AI</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="🎮 Membina gamifikasi dan permainan pembelajaran" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">🎮 Membina gamifikasi dan permainan pembelajaran</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="💻 Membina aplikasi / laman web pembelajaran menggunakan AI" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">💻 Membina aplikasi / laman web pembelajaran menggunakan AI</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="📚 Menggunakan AI untuk bahan PBD / pentaksiran" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">📚 Menggunakan AI untuk bahan PBD / pentaksiran</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition">
+                            <input type="checkbox" name="s4_skill" value="📝 Membantu penulisan surat, laporan dan dokumentasi" onchange="validateMax3('s4_skill', this)" class="mt-1 rounded text-blue-600 focus:ring-blue-500">
+                            <span class="text-sm text-slate-700">📝 Membantu penulisan surat, laporan dan dokumentasi</span>
+                        </label>
+
+                        <!-- Lain-lain -->
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl space-y-2">
+                            <label class="flex items-center gap-3 cursor-pointer">
+                                <input type="checkbox" id="s4_lain_check" onchange="toggleLain('s4_lain_check', 's4_lain_text'); validateMax3('s4_skill', this);" class="rounded text-blue-600 focus:ring-blue-500">
+                                <span class="text-sm text-slate-700 font-medium">Lain-lain:</span>
+                            </label>
+                            <input type="text" id="s4_lain_text" disabled placeholder="Sila nyatakan..." class="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 outline-none focus:border-blue-500 disabled:bg-slate-100">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submit-btn" class="w-full py-4 px-6 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-xl shadow-blue-500/25 transition-all flex items-center justify-center gap-2">
+                    <span>Hantar Soal Selidik</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+            </form>
+
+            <!-- Success Box (Hidden initially) -->
+            <div id="successBox" class="hidden text-center py-10 space-y-4">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold">
+                    ✓
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900">Terima Kasih!</h3>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">Jawapan anda telah berjaya disimpan ke dalam Google Sheet. Kerjasama anda amat dihargai!</p>
+                <button onclick="location.reload()" class="mt-4 px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold transition">
+                    Isi Sekali Lagi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-slate-400 mt-8">
+        Sistem Soal Selidik AI Guru &copy; 2026
+    </footer>
+
+    <script>
+        // MASUKKAN GOOGLE SCRIPT URL ANDA DI SINI
+        const GOOGLE_SCRIPT_URL = "MASUKKAN_URL_GOOGLE_SCRIPT_ANDA_DI_SINI";
+
+        function toggleLain(checkId, textId) {
+            const check = document.getElementById(checkId);
+            const text = document.getElementById(textId);
+            text.disabled = !check.checked;
+            if (check.checked) text.focus();
+            else text.value = '';
+        }
+
+        function validateMax3(groupName, changedInput) {
+            const checked = document.querySelectorAll(`input[name="${groupName}"]:checked`);
+            if (checked.length > 3) {
+                changedInput.checked = false;
+                alert("⚠️ Maksimum 3 pilihan sahaja untuk soalan ini!");
+            }
+        }
+
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const nama = document.getElementById('field-nama').value.trim();
+            const meRadio = document.querySelector('input[name="tahapPengalaman"]:checked');
+
+            const s3Selected = Array.from(document.querySelectorAll('input[name="s3_app"]:checked')).map(cb => cb.value);
+            if (document.getElementById('s3_lain_check').checked) {
+                const txt = document.getElementById('s3_lain_text').value.trim();
+                if (txt) s3Selected.push(`Lain-lain: ${txt}`);
+            }
+
+            const s4Selected = Array.from(document.querySelectorAll('input[name="s4_skill"]:checked')).map(cb => cb.value);
+            if (document.getElementById('s4_lain_check').checked) {
+                const txt = document.getElementById('s4_lain_text').value.trim();
+                if (txt) s4Selected.push(`Lain-lain: ${txt}`);
+            }
+
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Penghantaran Sedang Diproses...";
+
+            const formData = {
+                timestamp: new Date().toLocaleString('ms-MY'),
+                nama: nama,
+                tahapPengalaman: meRadio.value,
+                minatAplikasi: s3Selected,
+                kemahiranDiperlukan: s4Selected
+            };
+
+            try {
+                if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.startsWith("https://script.google.com")) {
+                    await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                }
+                
+                document.getElementById('publicSurveyForm').classList.add('hidden');
+                document.getElementById('successBox').classList.remove('hidden');
+
+            } catch (err) {
+                console.error(err);
+                alert("Ralat menghantar data. Sila cuba lagi.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Hantar Soal Selidik";
+            }
+        }
+    </script>
+</body>
+</html>
